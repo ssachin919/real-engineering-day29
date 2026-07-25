@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #0f1c2e;
+  --ink-soft: #3a4a5c;
+  --paper: #eef3f8;
+  --paper-deep: #dce6f0;
+  --blueprint: #1a5a9c;
+  --blueprint-bright: #2e7bc4;
+  --signal: #c45c26;
+  --signal-hover: #a84b1c;
+  --line: #b8c9db;
+  --white: #f7fafc;
+  --background: var(--paper);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-blueprint: var(--blueprint);
+  --color-blueprint-bright: var(--blueprint-bright);
+  --color-signal: var(--signal);
+  --color-signal-hover: var(--signal-hover);
+  --color-line: var(--line);
+  --color-white: var(--white);
+  --font-sans: var(--font-instrument);
+  --font-display: var(--font-syne);
+  --font-mono: var(--font-jetbrains);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes grid-drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 48px 48px;
+  }
+}
+
+@keyframes draw-line {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.35);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-instrument), system-ui, sans-serif;
+}
+
+.blueprint-grid {
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  animation: grid-drift 28s linear infinite;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
+
+.animate-fade-up-delay-1 {
+  animation: fade-up 0.7s ease-out 0.12s both;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fade-up 0.7s ease-out 0.24s both;
+}
+
+.animate-fade-up-delay-3 {
+  animation: fade-up 0.7s ease-out 0.36s both;
+}
+
+.animate-draw-line {
+  transform-origin: left;
+  animation: draw-line 1s ease-out 0.5s both;
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blueprint-grid,
+  .animate-fade-up,
+  .animate-fade-up-delay-1,
+  .animate-fade-up-delay-2,
+  .animate-fade-up-delay-3,
+  .animate-draw-line,
+  .animate-pulse-dot {
+    animation: none;
+  }
+
+  .animate-fade-up,
+  .animate-fade-up-delay-1,
+  .animate-fade-up-delay-2,
+  .animate-fade-up-delay-3 {
+    opacity: 1;
+    transform: none;
+  }
+
+  .animate-draw-line {
+    transform: scaleX(1);
+  }
+}

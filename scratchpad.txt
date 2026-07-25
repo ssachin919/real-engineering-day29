@@ -1,0 +1,11 @@
+# What is CI?
+Continuous Integration
+
+course-platform/
+├── .github/
+│   └── workflows/
+│       └── build.yml
+├── app/
+├── public/
+├── package.json
+└── package-lock.json
