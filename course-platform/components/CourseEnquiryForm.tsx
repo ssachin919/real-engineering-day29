@@ -83,7 +83,7 @@ export default function CourseEnquiryForm() {
       <div className="mx-auto max-w-6xl px-6 py-16 md:px-10 md:py-24">
         <div className="max-w-2xl">
           <p className="font-mono text-xs uppercase tracking-[0.22em] text-blueprint">
-            Enquire
+            Enqure
           </p>
           <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink md:text-4xl">
             Enquire About a Course
