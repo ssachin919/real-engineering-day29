@@ -9,3 +9,62 @@ course-platform/
 ├── public/
 ├── package.json
 └── package-lock.json
+
+
+Developer pushed code
+        ↓
+GitHub detected the push
+        ↓
+GitHub created a temporary Ubuntu runner
+        ↓
+Repository was downloaded
+        ↓
+Node.js was installed
+        ↓
+Dependencies were installed
+        ↓
+npm run build was executed
+        ↓
+GitHub reported success or failure
+
+To run github action only after pushing on main:
+on:
+  push:
+    branches:
+      - main
+More Practical Version:
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+
+# Common Mistakes:
+- Workflow saved in the wrong folder
+- Incorrect YAML indentation
+- Missing package-lock.json / pnpm-lock.yaml
+- Incorrect Node.js version
+- Missing build script
+- Environment variables missing
+
+
+# Task For Today
+- Create a GitHub Actions workflow for your own Next.js project.
+-The workflow must:
+    Run on every push
+    Use an Ubuntu runner
+    Check out the repository
+    Set up Node.js
+    Run pnpm install --frozen-lockfile
+    Run pnpm build
+- Then:
+    Push the working project and capture the successful workflow.
+    Introduce a small TypeScript or compilation error.
+    Push it and inspect the failed build logs.
+    Fix the error.
+    Push again and capture the successful workflow.
+- The final evidence should show one failed run followed by one successful run.
