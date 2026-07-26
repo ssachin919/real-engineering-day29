@@ -1,0 +1,41 @@
+# Common Mistakes
+
+- Coding Directly on Main
+- Creating a Vague Issue
+- Only Validating on the Frontend
+- Committing Everything Blindly
+- Merging Without Testing
+- Assuming Deployment Means Success
+- Exposing Environment Variables
+
+# Recap
+
+Idea → Code → GitHub → Review → Deployment → Bug fix
+
+
+# Try these out
+
+Save enquiries in PostgreSQL
+Add an admin enquiries page
+Send a confirmation email
+Protect the admin page using authentication
+Add automated tests to CI
+
+# Task for Today
+- Add one improvement to the enquiry feature: Store every valid course enquiry in a database.
+- Complete the entire workflow:
+    Create issue
+    → Create branch
+    → Implement feature
+    → Test locally
+    → Open pull request
+    → Run CI
+    → Merge
+    → Deploy
+    → Test the live application
+- Submit:
+    GitHub issue link
+    Pull request link
+    Production URL
+    Screenshot of a successful enquiry
+    One sentence describing what you learned
