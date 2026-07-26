@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const modules = [
   {
     week: "01",
@@ -60,12 +62,12 @@ export default function Home() {
             >
               Outcomes
             </a>
-            <a
-              href="#enroll"
+            <Link
+              href="/courses"
               className="text-signal transition-colors hover:text-signal-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blueprint"
             >
-              Enroll
-            </a>
+              Courses
+            </Link>
           </nav>
         </div>
       </header>
@@ -150,13 +152,12 @@ export default function Home() {
               A four-week course on architecture, delivery, and operations—taught with the same rigor you bring to a design review.
             </p>
             <div className="animate-fade-up-delay-3 mt-10 flex flex-wrap items-center gap-4">
-              <a
-                id="enroll"
-                href="#curriculum"
+              <Link
+                href="/courses"
                 className="inline-flex h-12 items-center justify-center bg-signal px-7 text-sm font-semibold text-white transition-colors hover:bg-signal-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blueprint"
               >
-                View the syllabus
-              </a>
+                Browse courses
+              </Link>
               <a
                 href="#outcomes"
                 className="inline-flex h-12 items-center justify-center border border-ink/20 bg-white/60 px-7 text-sm font-semibold text-ink backdrop-blur-sm transition-colors hover:border-ink/40 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blueprint"
@@ -240,12 +241,12 @@ export default function Home() {
                   Limited seats. Live critiques each week.
                 </p>
               </div>
-              <a
-                href="mailto:hello@realengineering.dev?subject=Cohort%20enrollment"
+              <Link
+                href="/courses#enquiry"
                 className="inline-flex h-12 shrink-0 items-center justify-center bg-ink px-7 text-sm font-semibold text-white transition-colors hover:bg-blueprint focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blueprint"
               >
                 Request a seat
-              </a>
+              </Link>
             </div>
           </div>
         </section>
